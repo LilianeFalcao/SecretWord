@@ -1,0 +1,42 @@
+.body{ 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textScret{
+    margin: 0;
+    margin-top: 150px;
+    font-size: 8em;
+    color: whitesmoke;
+}
+
+.textWord{
+    text-align: center;
+    font-size: 6em;
+    color: whitesmoke;
+    margin: 0 0 30px ;
+}
+.textWord span{
+    background-color: goldenrod;
+    color: #4c0468;
+    border-radius: 5px;
+    padding: 0 15px;
+    box-shadow: 0px 15px 15px #4c0468; /* Sombra com cor roxa */
+    height: 300px;
+    font-size: 120px;
+}
+
+.playButton{
+    padding: 15px;
+    width: 250px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1em;
+    border: 3px solid #fff;
+    background-color: #7b04aa;
+}
