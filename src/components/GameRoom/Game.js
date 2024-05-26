@@ -24,7 +24,7 @@ const Game = ({
 
     setLetraJogada('');
     letterInputRef.current.focus();
-  }
+  };
 
   return (
     <div className={styles.body}>
@@ -62,7 +62,7 @@ const Game = ({
         <div className="letraUsada">
           <p>Letras Utilizadas</p>
           {letrasErradas.map((letra, i ) => (
-              <span key={i}>{letra}</span>
+              <span key={i}>{letra} , </span>
           ))}
         </div>
     </div>

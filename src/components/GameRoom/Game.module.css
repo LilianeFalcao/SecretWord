@@ -12,7 +12,13 @@ body{
 }
 
 .dica{
-    color: goldenrod;
+    font-size: 19px;
+    color: #7b04aa;
+    background-color: goldenrod;
+    border-radius: 5px;
+    box-shadow: 0px 15px 15px #4c0468; /* Sombra com cor roxa */
+    padding: 5px;
+    margin: 0 250px 30px 250px ;
 }
 
 .wordContariner{
@@ -22,6 +28,7 @@ body{
     border: 8px solid goldenrod;
     background-color: #2d1d33;
     border-radius: 20px;
+    box-shadow: 0px 15px 15px #16031d; /* Sombra com cor roxa */
 }
 
 .letter, .squareblank{

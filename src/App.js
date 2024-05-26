@@ -6,6 +6,8 @@ import PaginaIni from './components/PaginaInicial/PaginaIni';
 import Game from './components/GameRoom/Game';
 import GameOver from './components/GameOver/GameOver';
 
+const TentaPadrao = 5;
+
 function App() {
   //estagios
   const Stages = [
@@ -23,21 +25,25 @@ function App() {
 
   const [ letrasAdivinhadas, setLetrasAdivinhadas ] = useState([]);
   const [ letrasErradas, setLetrasErradas ] = useState([]);
-  const [ tentativas, setTentativas ] = useState(5);
+  const [ tentativas, setTentativas ] = useState(TentaPadrao);
   const [ score, setScore] = useState(0);
   
-  const pegarLetraCategoria = () =>{
+  const pegarLetraCategoria = useCallback(() =>{
+
     //pegando categoria
       const categories = Object.keys(words)
       const category = categories[Math.floor(Math.random() * Object.keys(categories).length)] ;
     //pegando palavra
       const word = words[category][Math.floor(Math.random() * words[category].length)];
       return {word, category};
-  };
+
+  }, [words]);
 
   //starta o jogo
-  const StartGame = () => {
+  const StartGame = useCallback(() => {
     const { category, word } = pegarLetraCategoria();
+
+    clearStates();
 
     //criando array de letras
     let wordLetters = word.split("");
@@ -49,17 +55,64 @@ function App() {
     setLetra(wordLetters)
 
     setGameStage(Stages[1].name);
-  };
+  }, [pegarLetraCategoria]);
 
   //botao q testa a letra input
   const verifyLetter = (letraJogada) =>{
-    console.log(letraJogada)
+    const normalizaLetra = letraJogada.toLowerCase();
+
+    //vendo se a letra foi usada
+    if(
+        letrasAdivinhadas.includes(normalizaLetra) || 
+        letrasErradas.includes(normalizaLetra)){
+        return;
+      };
+    
+      if (letras.includes(normalizaLetra)) {
+        setLetrasAdivinhadas((letrasAdiAgr) => [
+          ...letrasAdiAgr, normalizaLetra,
+        ]);
+      } else {
+        setLetrasErradas((wrongLetter) => [
+          ...wrongLetter, normalizaLetra,
+        ]);
+        setTentativas((tentativasAtual ) => tentativasAtual - 1)
+      }
   };
-  
+
+  //useEffect das tentativas
+  const clearStates = () => {
+    setLetrasAdivinhadas([]);
+    setLetrasErradas([]);
+  }
+
+  useEffect(() => {
+    if( tentativas <= 0 ){
+      clearStates();
+
+      setGameStage(Stages[2].name);
+    }
+  }, [tentativas]);
+
+  //checando vitorias
+
+  useEffect(() =>{
+    const uniqueLetter = [...new Set(letras)];
+
+    //win 
+    if(letrasAdivinhadas.length === uniqueLetter.length && gameStage === Stages[1].name ){
+      setScore((atualScore) => atualScore += 100);
+
+      StartGame();
+    }
+  }, [letrasAdivinhadas, letras, StartGame, gameStage]);
 
   //restart game
   const playAgain = () =>{
-    setGameStage(Stages[0].name);
+    setScore(0);
+    setTentativas(TentaPadrao);
+
+    setGameStage(Stages[1].name);
   };
 
   return (
@@ -76,7 +129,7 @@ function App() {
             tentativas = {tentativas}
             score = {score}
       />}
-      {gameStage === 'gameOver'  && <GameOver playAgain={playAgain} />}
+      {gameStage === 'gameOver'  && <GameOver score = {score} playAgain={playAgain} />}
     </div>
   );
 }

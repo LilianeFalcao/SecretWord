@@ -4,6 +4,7 @@ export const wordsList = {
     corpo: ["Braço", "Perna", "Cérebro", "Pescoço", "Olhos"],
     computador: ["Mouse", "Teclado", "Monitor", "Gabinete"],
     programação: ["Linguagem", "Framework", "JavaScript", "React", "Laravel"],
-    alimento: ["Arroz", "Feijão", "Carne", "Leite", "Ovo"],
-    animes: ["Naruto", "OnePiece", "DragonBall", "Bleach", "SailorMoon", "HunterXHunter"]
+    alimento: ["Arroz", "Feijão", "Carne", "Leite", "Ovo", "Macarrão"],
+    animes: ["Naruto", "OnePiece", "DragonBall", "Bleach", "SailorMoon", "HunterXHunter", "SwordArtOnline"],
+    games: ["DarkSouls", "Zelda", "Mario", "Pokemon", "CounterStrike", "CallOfDuty", "Portal", "Castlevania"]
   };
