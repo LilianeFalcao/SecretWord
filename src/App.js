@@ -5,6 +5,7 @@ import {wordsList} from './data/Words'
 import PaginaIni from './components/PaginaInicial/PaginaIni';
 import Game from './components/GameRoom/Game';
 import GameOver from './components/GameOver/GameOver';
+import Win from './components/vitorias/telaWin';
 
 const TentaPadrao = 5;
 
@@ -14,6 +15,7 @@ function App() {
     { id: 1, name: 'start' },
     { id: 2, name: 'gaming' },
     { id: 3, name: 'gameOver' },
+    { id: 4, name: 'Win' },
   ]
 
   const [words] = useState(wordsList);
@@ -102,9 +104,13 @@ function App() {
     //win 
     if(letrasAdivinhadas.length === uniqueLetter.length && gameStage === Stages[1].name ){
       setScore((atualScore) => atualScore += 100);
-
       StartGame();
     }
+    if(score === 1000){
+      setGameStage(Stages[3].name)
+    }
+    
+
   }, [letrasAdivinhadas, letras, StartGame, gameStage]);
 
   //restart game
@@ -130,6 +136,7 @@ function App() {
             score = {score}
       />}
       {gameStage === 'gameOver'  && <GameOver score = {score} playAgain={playAgain} />}
+      {gameStage === 'Win'  && <Win score = {score} playAgain={playAgain} />}
     </div>
   );
 }
