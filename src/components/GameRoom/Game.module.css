@@ -1,64 +1,42 @@
-body{
+body {
     margin: 0;
     padding: 0;
     color: #fff;
     height: 100%;
-    background: rgb(11,1,168);
     background: linear-gradient(211deg, rgba(11,1,168,1) 3%, rgba(81,81,219,1) 50%, rgba(47,210,244,1) 96%);
     background-repeat: no-repeat;
 }
-.pontuacao{
+
+.pontuacao {
     font-size: 30px;
 }
 
-.h1A{
+.h1A {
     font-size: 2.5em;
 }
 
-.dica{
-    font-size: 19px;
+.dica {
+    font-size: 20rem;
     color: #7b04aa;
     background-color: goldenrod;
     border-radius: 5px;
-    box-shadow: 0px 15px 15px #4c0468; /* Sombra com cor roxa */
+    box-shadow: 0px 15px 15px #4c0468;
     padding: 5px;
-    margin: 0 250px 30px 250px ;
+    margin: 0 250px 30px 250px;
 }
 
 .wordContariner{
     margin: 1.5em;
     padding: 1.5em;
     display: flex;
+    flex-wrap: wrap;
     border: 8px solid goldenrod;
     background-color: #2d1d33;
     border-radius: 20px;
     box-shadow: 0px 15px 15px #16031d; /* Sombra com cor roxa */
 }
-@media (max-height: 1628px) {
-    .h1A{
-        font-size: 1.5em;
-    }
-    .pontuacao{
-        font-size: 15px;
-    }
-    .dica{
-        font-size: 9px;
-        padding: 4px;
-        margin: 0 125px 15px 125px ;
-    }
-    .wordContariner{
-        margin: 1.5em;
-        padding: 1.5em;
-        display: flex;
-        flex-wrap: wrap;
-        border: 8px solid goldenrod;
-        background-color: #2d1d33;
-        border-radius: 20px;
-        box-shadow: 0px 15px 15px #16031d; /* Sombra com cor roxa */
-    }
-}
 
-.letter, .squareblank{
+.letter, .squareblank {
     font-size: 70px;
     line-height: 1.5;
     border: 3px solid #000;
@@ -69,17 +47,18 @@ body{
     color: #000;
     border-radius: 15px;
 }
-.letterContainer p{
+
+.letterContainer p {
     margin: 1.2em;
 }
 
-.letterContainer form{
+.letterContainer form {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.letterContainer button{
+.letterContainer button {
     padding: 15px;
     margin-left: 1em;
     width: 150px;
@@ -92,8 +71,7 @@ body{
     cursor: pointer;
 }
 
-
-.letterContainer input{
+.letterContainer input {
     width: 50px;
     height: 50px;
     font-size: 2em;
@@ -101,99 +79,108 @@ body{
     border: 2px solid #000;
 }
 
-@media (max-width: 630px) {
-    .body{
-        margin: 150px 250px 250px 250px ;
+
+@media (max-height: 1628px) {
+    .h1A {
+        font-size: 1.5em;
+    }
+    .pontuacao {
+        font-size: 15px;
     }
     .dica {
-        margin: 0 50px 20px 50px; /* Ajusta a margem para telas menores */
+        font-size: 15px;
+        padding: 4px;
+        margin: 0 125px 15px 125px;
     }
     .wordContainer {
-        margin: .1em; /* Margem reduzida para telas menores */
-        padding: .1em; /* Padding reduzido para telas menores */
-        border-width: 6px; /* Ajusta a largura da borda */
-        box-shadow: 0px 10px 10px #16031d; /* Ajusta o tamanho da sombra */
-        flex-direction: column; /* Altera a direção do flex para telas menores */
         flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 630px) {
+    .dica {
+        margin: 0 50px 20px 50px;
+    }
+    .wordContainer {
+        margin: 0.1em;
+        padding: 0.1em;
+        border-width: 6px;
+        box-shadow: 0px 10px 10px #16031d;
+        flex-direction: column;
     }
     .letter {
         font-size: 35px;
     }
     .textScret {
-        font-size: 6em; /* Ajusta o tamanho da fonte */
+        font-size: 6em;
     }
     .textWord {
-        font-size: 4em; /* Ajusta o tamanho da fonte */
+        font-size: 4em;
     }
     .textWord span {
-        font-size: 90px; /* Ajusta o tamanho da fonte */
-        height: 200px; /* Ajusta a altura */
+        font-size: 90px;
+        height: 200px;
     }
     .playButton {
-        padding: 6px; /* Ajusta o padding */
-        width: 110px; /* Ajusta a largura */
-        font-size: 0.4em; /* Ajusta o tamanho da fonte */
+        padding: 6px;
+        width: 110px;
+        font-size: 0.4em;
     }
 }
-
 
 @media (max-width: 540px) {
-    .body{
-        margin: 1500px 2500px 2500px 2500px ;
-    }
     .dica {
-        margin: 0 50px 20px 50px; /* Ajusta a margem para telas menores */
+        margin: 0 50px 20px 50px;
     }
     .wordContainer {
-        margin: .1em; /* Margem reduzida para telas menores */
-        padding: .1em; /* Padding reduzido para telas menores */
-        border-width: 6px; /* Ajusta a largura da borda */
-        box-shadow: 0px 10px 10px #16031d; /* Ajusta o tamanho da sombra */
-        flex-direction: column; /* Altera a direção do flex para telas menores */
-        flex-wrap: wrap;
+        margin: 0.1em;
+        padding: 0.1em;
+        border-width: 6px;
+        box-shadow: 0px 10px 10px #16031d;
+        flex-direction: column;
     }
     .letter {
         font-size: 35px;
     }
     .textScret {
-        font-size: 6em; /* Ajusta o tamanho da fonte */
+        font-size: 6em;
     }
     .textWord {
-        font-size: 4em; /* Ajusta o tamanho da fonte */
+        font-size: 4em;
     }
     .textWord span {
-        font-size: 90px; /* Ajusta o tamanho da fonte */
-        height: 200px; /* Ajusta a altura */
+        font-size: 90px;
+        height: 200px;
     }
     .playButton {
-        padding: 6px; /* Ajusta o padding */
-        width: 110px; /* Ajusta a largura */
-        font-size: 0.4em; /* Ajusta o tamanho da fonte */
+        padding: 6px;
+        width: 110px;
+        font-size: 0.4em;
     }
 }
-/* Media query para telas menores que 480px (ex: dispositivos móveis) */
+
 @media (max-width: 480px) {
     .dica {
-        margin: 0 20px 10px 20px; /* Ajusta ainda mais a margem para telas pequenas */
+        margin: 0 20px 10px 20px;
     }
     .wordContainer {
-        margin: 0.5em; /* Reduz ainda mais a margem */
+        margin: 0.5em;
     }
     .textScret {
-        font-size: 4em; /* Reduz o tamanho da fonte */
+        font-size: 4em;
     }
     .textWord {
-        font-size: 3em; /* Reduz o tamanho da fonte */
+        font-size: 3em;
         margin: 0 0 15px;
     }
     .textWord span {
-        font-size: 60px; /* Reduz o tamanho da fonte */
-        height: 150px; /* Reduz a altura */
-        padding: 0 10px; /* Reduz o padding */
+        font-size: 60px;
+        height: 150px;
+        padding: 0 10px;
     }
     .playButton {
-        padding: 10px; /* Reduz o padding */
-        width: 200px; /* Reduz a largura */
-        font-size: 0.8em; /* Reduz o tamanho da fonte */
+        padding: 10px;
+        width: 200px;
+        font-size: 0.8em;
     }
 }
