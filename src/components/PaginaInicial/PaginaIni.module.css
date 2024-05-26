@@ -40,3 +40,50 @@
     background-color: #7b04aa;
     cursor: pointer;
 }
+
+@media (max-width: 480px) {
+    .textScret {
+        font-size: 4em; /* Reduz o tamanho da fonte */
+    }
+
+    .textWord {
+        font-size: 3em; /* Reduz o tamanho da fonte */
+        margin: 0 0 15px;
+    }
+
+    .textWord span {
+        font-size: 60px; /* Reduz o tamanho da fonte */
+        height: 150px; /* Reduz a altura */
+        padding: 0 10px; /* Reduz o padding */
+    }
+
+    .playButton {
+        padding: 10px; /* Reduz o padding */
+        width: 200px; /* Reduz a largura */
+        font-size: 0.8em; /* Reduz o tamanho da fonte */
+    }
+}
+
+
+@media (max-width: 240px) {
+    .textScret {
+        font-size: .2em; /* Reduz o tamanho da fonte */
+    }
+
+    .textWord {
+        font-size: .3em; /* Reduz o tamanho da fonte */
+        margin: 0 0 5px;
+    }
+
+    .textWord span {
+        font-size: 30px; /* Reduz o tamanho da fonte */
+        height: 75px; /* Reduz a altura */
+        padding: 0 5px; /* Reduz o padding */
+    }
+
+    .playButton {
+        padding: 5px; /* Reduz o padding */
+        width: 50px; /* Reduz a largura */
+        font-size: 0.8em; /* Reduz o tamanho da fonte */
+    }
+}

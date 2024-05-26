@@ -16,11 +16,11 @@ body{
     color: #7b04aa;
     font-size: 4em;
 }
-h3{
+.point{
     font-size: 3em;
 }
-h3 span{
-    font-size: 16pxm;
+.point .ae{
+    font-size: 16px;
     padding: 15px;
     border-radius: 30px;
     color: #7b04aa;
